@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback so /marketing, /packages/:slug and /privacy resolve to the React router.
+# Static files (e.g. a real /privacy.html in /public) are still served first.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
